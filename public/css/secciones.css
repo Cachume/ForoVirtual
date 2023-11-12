@@ -1,0 +1,163 @@
+.uno_noticias img {
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+.uno_noticias {
+  position: absolute;
+  top: 425px;
+  right: 70px;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  min-width: 160px;
+  height: 190px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.uno_cursos {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  min-width: 160px;
+  height: 190px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.canales {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.seccion {
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+.comentario {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.comentario_temas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comentario_mensajes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  margin: 0 0 5px;
+}
+
+p {
+  margin: 0;
+}
+
+/* Estilos generales que se aplicarán a todas las pantallas */
+.uno_noticias img {
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+.uno_noticias,
+.uno_cursos,
+.canales,
+.seccion,
+.comentario,
+.comentario_temas,
+.comentario_mensajes {
+  margin-top: 2%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+.canales {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* Media queries para ajustar estilos en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+
+  .uno_noticias,
+  .uno_cursos {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  .uno_noticias {
+    margin-top: 20px;
+    min-width: auto;
+    height: auto;
+  }
+
+  .uno_cursos {
+    min-width: auto;
+    height: auto;
+  }
+
+  .canales {
+    gap: 20px;
+  }
+
+  .seccion {
+    max-width: 100%;
+  }
+
+  .comentario,
+  .comentario_temas,
+  .comentario_mensajes {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+/* Agrega más media queries según sea necesario para pantallas aún más pequeñas */

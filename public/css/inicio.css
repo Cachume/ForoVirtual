@@ -1,0 +1,111 @@
+.formularioinicio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 5rem;
+    margin-bottom: 2rem;
+}
+
+.imagen {
+    width: 350px;
+}
+
+.inicio {
+    width: 400px;
+    background: #f6f6f6;
+    padding: 30px;
+    border-radius: 4px;
+    font-family: 'arial';
+    color: #083358;
+    font-size: 18px;
+    box-shadow: 7px 13px 37px #808080;
+
+
+}
+
+.inicio h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.inicio h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.inicio h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.datos {
+    width: 100%;
+    background: #f6f6f6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #276e90;
+    font-family: 'arial';
+
+}
+
+.inicio p {
+    text-align: center;
+
+    line-height: 40px;
+}
+
+.inicio a {
+    color: #083358;
+    text-decoration: none;
+}
+
+.inicio a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.boton {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #B5B2B2;
+    background: #0f4471;
+    font-size: 19px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin: 16px 0;
+}
+
+.error1 {
+    background-color: red;
+    font-size: 20px;
+    width: 560px;
+    color: white;
+    border-radius: 5px;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+.success {
+    background-color: green;
+    font-size: 20px;
+    width: 560px;
+    border-radius: 5px;
+    margin: 5px auto;
+    color: white;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .imagen {
+        display: none;
+
+    }
+
+}

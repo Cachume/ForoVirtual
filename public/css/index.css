@@ -1,0 +1,274 @@
+@font-face {
+    font-family: Roboto;
+    src: url('./Roboto/Roboto-Black.ttf');
+    src: url('./Roboto/Roboto-Bold.ttf');
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #dde5ec;
+    text-align: center;
+}
+
+header {
+    background-image: url(../img/upt.jpg);
+    background-position: center;
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+.h_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 290px;
+    padding: 30px;
+}
+
+.h_top h2 {
+    color: white;
+    font-weight: 22px;
+}
+
+.h_top a {
+    background: #f0ae22;
+    color: white;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.h_bottom {
+    background: #305a7b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.h_bottom ul {
+    display: flex;
+    list-style: none;
+}
+
+.h_bottom ul li {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.h_bottom ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.h_bottom form {
+    margin-right: 40px;
+}
+
+.h_bottom form input {
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.userimg {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+/*Propiedades del Main*/
+
+.main_index {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px 50px;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+.main_welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.welcome_item:nth-child() {
+    background: #ffffff;
+  padding: 40px 2px;
+  width: 779px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.welcome_item h2 {
+    margin-bottom: 1rem;
+}
+
+.welcome_item p {
+    font-size: 18px;
+}
+
+.welcome_item img {
+    width: 700px;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #305a7b;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    color: white;
+    display: none;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+footer img {
+    width: 180px;
+}
+
+.footer_contenido {
+    text-align: left;
+    font-size: 14px;
+}
+
+.footer_contenido a {
+    color: white;
+}
+
+/*Modelo Mobile*/
+.h_bottom__mobile {
+    background: #305a7b;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+}
+
+.imgl {
+    width: 20px;
+    cursor: pointer;
+}
+
+.lsk {
+    list-style: none;
+}
+
+.lsk li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.lsk li img {
+    width: 20px;
+    height: 20px;
+}
+
+.lsk li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.lsk li:hover {
+    background: #548fbd;
+}
+
+.h_menu {
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    height: 100%;
+    gap: 20px;
+    background: #3e4144;
+    top: 0px;
+    left: 0px;
+}
+
+.h_menu ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    text-align: start;
+    gap: 20px;
+}
+
+.h_menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px 20px 30px 10px;
+}
+
+.h_title {
+    display: flex;
+    align-items: center;
+    color: white;
+    background: #35373a;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+}
+
+.h_title img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.h_menu form input {
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:900px) {
+
+    .h_bottom {
+        display: none;
+    }
+
+    .h_bottom__mobile {
+        display: flex;
+    }
+
+    .h_top a {
+        display: none;
+    }
+
+    .estadisticas {
+        width: 300px;
+    }
+}

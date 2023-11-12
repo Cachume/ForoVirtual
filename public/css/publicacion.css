@@ -1,0 +1,205 @@
+/* Estilo para la página de creación de publicación */
+
+
+/* Estilo para los títulos */
+h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+/* Estilo para etiquetas de formulario */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilo para campos de entrada de texto */
+.titulopubli,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilo para el botón de añadir imagen */
+.boton-anadir-imagen {
+  background-color: #2e70a3;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/* Estilo para los botones de crear y cancelar publicación */
+.boton-crear,
+.boton-cancelar {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.boton-crear {
+  background-color: #305a7b;
+  color: #fff;
+}
+
+.boton-cancelar {
+  background-color: #305a7b;
+  color: #fff;
+}
+
+.boton-anadir-imagen:hover,
+.boton-crear:hover,
+.boton-cancelar:hover {
+  background-color: #555;
+}
+
+/* Estilo para el botón de cerrar en la ventana emergente */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+.cerrar:hover {
+  color: #555;
+}
+
+.main_publicacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.publicacionbotones{
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.publicacionbotones a{
+  background-color: #305a7b;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.publicacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_publicacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 900px;
+}
+
+.user_publicacion img{
+  width: 100%;
+}
+
+.user_publicacion p{
+  margin: 1rem 0 1rem 0;
+}
+
+.user_data{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+.user_data img{
+  width: 40px;
+  border-radius: 100%;
+  height: 40px;
+}
+
+.user_data span{
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.publicacion_comentario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.user_comentario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  margin-bottom: 1rem;
+}
+
+.user_comentario p{ margin:1rem 0 1rem 0;}
+
+.user_comentario_img{
+  width: 80%;
+}
+
+.publicacion_comentario h2{
+  margin-bottom: 3rem;
+}
+
+.crear_comentario{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  min-width: 700px;
+}
+.crear_comentario h2{
+  text-align: left;
+}
+
+@media only screen and (max-width:900px) {
+
+  .user_publicacion{
+    width: 500px;
+  }
+
+  .user_comentario{
+    width: 500px;
+  }
+}
+
+

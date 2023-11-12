@@ -1,0 +1,48 @@
+
+.repuestas{
+    width: 450px;
+    background: #f6f6f6;
+    padding: 30px;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 3px;
+    font-family: 'arial';
+    color: #083358;
+    font-size: 18px;
+    box-shadow: 7px 13px 37px #808080;
+}
+.respuestas h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;  
+
+}
+.repuestas h1{
+    font-size: 20px;
+    margin-bottom: 23px;
+    text-align: center;  
+    color: black;
+}
+.res{
+    width: 100%;
+    background: #f6f6f6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #276e90;
+    font-family: 'arial';
+}
+.aceptar1{
+    text-decoration: none;
+    background: #0f4471;
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 16px;
+    font-family: 'arial';
+    margin: 130px;
+
+}
+.aceptar1:hover{
+    background: red;
+}

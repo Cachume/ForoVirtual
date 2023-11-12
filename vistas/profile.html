@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/publicacion.css">
+    <link rel="stylesheet" href="../public/css/hilos.css">
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <main class="main_publicacion">
+        <div class="publicacion">
+            <div class="user_publicacion">
+                <div class="publicacionbotones">
+                    <a href="">🡸 Regresar</a>
+                </div>
+                <h1>Como puedo centrar un div?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere vero optio esse error cumque similique mollitia possimus itaque saepe obcaecati, reprehenderit fuga consectetur non, maxime adipisci doloremque hic veniam.</p>
+                <img src="../public/img/1668963476_publica_Captura de pantalla (3).png" alt="" srcset="">
+                <div class="user_data">
+                    <img src="../public/img/user_img/1Albert Josue___26Albert Josue___wallpaperbetter.jpg" alt="">
+                    <span>Publicación creada por: Albert Josue Quintero Colina</span>
+                </div>
+                <div class="respuesta">
+                    <button id="abrirPopup">Responder</button>
+                    <div id="popup" class="overlay">
+                        <div class="popup">
+                            <h2>Responder</h2>
+                            <a class="cerrar" href="#">&times;</a>
+                            <form id="formulario" method="post" action="index.php?u=secciones&m=hilosrespuesta">
+                                <input type="hidden" name="respuesta" value="true">
+                                <textarea name="cuerpo" placeholder="Escribe tu respuesta..." required></textarea>
+                                <input type="file" name="imagen[]" accept="image/*" multiple>
+                                <button type="submit">Responder</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publicacion_comentario">
+                <h2>Comentarios</h2>
+                <div class="user_comentario">
+                <h1>Como puedo centrar un div?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere vero optio esse error cumque similique mollitia possimus itaque saepe obcaecati, reprehenderit fuga consectetur non, maxime adipisci doloremque hic veniam.</p>
+                <img class="user_comentario_img" src="../public/img/1668963476_publica_Captura de pantalla (3).png" alt="" srcset="">
+                <div class="user_data">
+                    <img src="../public/img/user_img/1Albert Josue___26Albert Josue___wallpaperbetter.jpg" alt="">
+                    <span>Comentario creado por: Albert Josue Quintero Colina</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+    <script src="../public/js/script.js"></script>
+</body>
+</html>

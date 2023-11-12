@@ -1,0 +1,233 @@
+.perfilusu {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture img {
+    max-width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+
+button#change-profile-button {
+    background-color: #0f4471;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-top: 10px;
+}
+
+button#change-profile-button:hover {
+    background-color: red;
+}
+
+form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.campo1{
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form select {
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button[type="submit"] {
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0f4471;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: red;
+}
+
+.nombreperfil{
+    margin-bottom: 2rem;
+}
+
+.main_profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    font-family: sans-serif;
+}
+
+.perfil{
+    min-width: 1100px;
+    max-width: 1300px;
+    height: 700px;
+    border-radius: 10px;
+    background-image: url("../img/upt4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: -60px;
+    position: relative;
+}
+
+.perfil_info{
+    width: 100%;
+    height: 400px;
+    background: #f5f4f4;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0;
+}
+
+.perfil_user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    position: relative;
+    bottom: 97px;
+}
+
+.perfil_user_img{
+    width: 200px;
+    height: 210px;
+    border-radius: 10px;
+    box-shadow: #f2f2f2 3px 5px 3px 5px;
+}
+
+.perfil_user_data{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 6rem;
+    text-align: left;
+}
+
+.user_puntos{
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.puntos_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}
+
+.puntos_item span:nth-child(1){
+    font-weight: bolder;
+    text-decoration:dashed;
+}
+
+.puntos_item span:nth-child(2){
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
+.perfil_post{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.perfil_posts{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post{
+    background-color: white;
+    width: 650px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: #f2f2f2 3px 5px 3px 5px;
+}
+
+.names{
+    font-weight: bolder;
+    margin-top:5px;
+}
+
+.rol{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    padding: 4px 10px;
+}
+
+.data{
+    margin-bottom: 1rem;
+}
+
+.data h5{
+   margin: 0;
+   font-size: 14px;
+}
+
+.data span{
+    color: #707070;
+    font-size: 13px;
+}
+
+@media only screen and (max-width:900px) {
+    .perfil{
+        min-width: 550px;
+        max-width: 800px;
+    }
+}

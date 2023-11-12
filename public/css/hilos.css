@@ -1,0 +1,245 @@
+/* Estilo general del cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+.main-hilos{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* Estilo compartido para tarjetas de comentarios y noticias */
+.tarjeta {
+  background-color: #f2f2f2;
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+.uno_noticias {
+  position: fixed;
+  bottom: 0;
+  background-color: #f2f2f2;
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-left: 25%;
+  z-index: -1;
+}
+
+/* Estilo de títulos */
+h2 {
+  margin: 0 0 10px;
+}
+
+/* Estilo de párrafos */
+p {
+  margin: 0;
+}
+
+/* Estilo para la información del usuario */
+.usuario {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Estilo para la imagen de perfil */
+.usuario img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilo para los nombres de usuario */
+.usuario h3 {
+  margin: 0;
+}
+
+/* Estilo de los botones de respuesta */
+.respuesta button {
+  background-color: #305a7b;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Estilo de los botones de respuesta al pasar el mouse */
+.respuesta button:hover {
+  background-color: #555;
+}
+
+/* Estilo de las tarjetas de preguntas */
+.pregunta {
+  margin-top: 5%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.botones {
+  width: 570px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilo para el botón de cerrar hilo */
+.boton-externo {
+  top: -30px;
+  right: 0px;
+  background-color: #305a7b;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Estilo para el botón de cerrar hilo al pasar el mouse */
+.boton-externo:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para botones en general */
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para la superposición de fondo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la ventana emergente */
+/* Estilo de la ventana emergente */
+.popup {
+  background-color: #ffffff;
+  padding: 30px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3;
+}
+
+.popup form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilo para títulos en la ventana emergente */
+.popup h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para párrafos en la ventana emergente */
+.popup p {
+  margin: 0;
+}
+
+/* Estilo para el área de texto en la ventana emergente */
+form textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 5px;
+  resize: none;
+}
+
+/* Estilo para la entrada de archivos en la ventana emergente */
+form input[type="file"] {
+  margin-bottom: 10px;
+}
+
+/* Estilo para el botón de enviar en la ventana emergente */
+form button[type="submit"] {
+  background-color: #305a7b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo para el botón de cerrar en la ventana emergente */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Estilo para el botón de cerrar al pasar el mouse en la ventana emergente */
+.cerrar:hover {
+  color: #555;
+}
+
+/* Media query para pantallas con un ancho máximo de 900px */
+@media only screen and (max-width: 900px) {
+  .tarjeta {
+    max-width: 90%; /* Reduce el ancho máximo para que se ajuste mejor en pantallas más pequeñas */
+    margin-left: 5%; /* Centra el elemento horizontalmente */
+  }
+  
+  .uno_noticias {
+    max-width: 90%; /* Reduce el ancho máximo para que se ajuste mejor en pantallas más pequeñas */
+    margin-left: 5%; /* Centra el elemento horizontalmente */
+  }
+  
+  .respuesta button {
+    margin: 5% auto; /* Centra horizontalmente y ajusta el margen */
+  }
+  
+  .pregunta {
+    max-width: 90%; /* Reduce el ancho máximo para que se ajuste mejor en pantallas más pequeñas */
+    margin-left: 5%; /* Centra el elemento horizontalmente */
+  }
+  
+  .botones {
+    width: 100%; /* Aprovecha el ancho completo */
+    justify-content: space-around; /* Distribuye los botones horizontalmente en el ancho completo */
+  }
+  
+  .boton-externo {
+    right: 5%; /* Alinea el botón al borde derecho del elemento contenedor */
+  }
+  
+  .popup {
+    max-width: 90%; /* Reduce el ancho máximo para que se ajuste mejor en pantallas más pequeñas */
+    margin: 5% auto; /* Centra horizontalmente y ajusta el margen */
+  }
+}
+
