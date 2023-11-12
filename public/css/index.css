@@ -101,6 +101,23 @@ header {
     margin-bottom: 100px;
 }
 
+.cintillo{
+    display: flex;
+    align-items: center;
+    background:white;
+    justify-content: space-between;
+    padding:4px;
+}
+
+.cintillo img:nth-child(1){
+    height: 60px;
+    width: 300px;
+}
+
+.cintillo img:nth-child(2){
+    height: 60px;
+}
+
 .main_welcome {
     display: flex;
     flex-direction: column;
@@ -108,10 +125,10 @@ header {
     align-items: center;
 }
 
-.welcome_item:nth-child() {
+.welcome_item {
     background: #ffffff;
-  padding: 40px 2px;
-  width: 779px;
+    padding: 40px 2px;
+    width: 779px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -127,6 +144,7 @@ header {
 .welcome_item img {
     width: 700px;
     margin-bottom: 1rem;
+    padding: 10px;
 }
 
 footer {
@@ -271,4 +289,8 @@ footer img {
     .estadisticas {
         width: 300px;
     }
-}
+    
+    .welcome_item{
+        width: 567px;
+    }
+    }
