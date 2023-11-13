@@ -272,6 +272,20 @@ footer img {
     font-weight: bold;
 }
 
+.Administrador{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    padding: 4px 10px;
+}
+
+.Estudiante{
+    background-color: rgb(21, 255, 0);
+    color: white;
+    font-weight: bolder;
+    padding: 4px 10px;
+}
+
 @media only screen and (max-width:900px) {
 
     .h_bottom {

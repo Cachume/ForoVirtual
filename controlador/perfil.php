@@ -19,6 +19,7 @@ class PerfilController extends BasedeDatos
     public function default()
     {
         $datosusuario=$this->getDatosusuarios($_SESSION['id']);
+        $rol=$this->rolname($_SESSION['rol']);
         require('public/layout/header.php');
         require('vistas/perfilusuario.php');
         require('public/layout/footer.php');
@@ -127,6 +128,26 @@ class PerfilController extends BasedeDatos
     private function mensajes($tipo,$mensaje){
         header("location: index.php?u=perfil&".$tipo."=".$mensaje."");         
     }
+
+    private function rolname($rol){
+        $rolname="";
+        switch ($rol) {
+            case 1:
+                $rolname="Administrador";
+                break;
+            case 2:
+                $rolname="Moderador";
+                break;
+            case 3:
+                $rolname="Docente";
+                break;
+            default:
+                $rolname="Estudiante";
+                break;
+        }
+        return $rolname;
+    }
+
 }
 
 ?>

@@ -204,13 +204,6 @@ form button[type="submit"]:hover {
     margin-top:5px;
 }
 
-.rol{
-    background-color: red;
-    color: white;
-    font-weight: bolder;
-    padding: 4px 10px;
-}
-
 .data{
     margin-bottom: 1rem;
 }

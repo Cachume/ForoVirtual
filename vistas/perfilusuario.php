@@ -5,7 +5,7 @@
                 <div class="perfil_user">
                     <img src="public/img/user_img/<?php echo $_SESSION['imagen'];?>" alt="" class="perfil_user_img">
                     <span class="names" ><?php echo $_SESSION['nombres']." ".$_SESSION['apellidos']; ?></span>
-                    <span class="rol" >Administrador</span>
+                    <span class="<?php echo $rol;?>" ><?php echo $rol;?></span>
                     <div class="perfil_user_data">
                         <div class="data">
                             <h5>Registrado el:</h5>
