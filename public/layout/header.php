@@ -24,6 +24,10 @@
 </head>
 
 <body>
+    <div class="cintillo">
+        <img src="public/img/cintillo-foro-pt1.jpg">
+        <img src="public/img/cintillo-foro-pt2.jpg">
+    </div>
     <header>
         <div class="h_top">
             <h2>Foro UPT "Jose Felix Ribas"</h2>
