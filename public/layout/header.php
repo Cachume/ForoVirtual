@@ -62,7 +62,13 @@
         <nav class="h_bottom__mobile">
             <img src="public/img/icons/menu-hamburguesa32px.png" class="imgl" onclick="verpubli()">
             <ul class="lsk">
-                <li><img src="public/img/icons/cerrar.png" alt=""><a href="">Acceder</a></li>
+                <?php
+                    if(isset($_SESSION['id'])){
+                        echo '<li><img src="public/img/user_img/'.$_SESSION['imagen'].'" alt=""><a href="index.php?u=perfil">'.$_SESSION['nombres'].'</a></li>';
+                    }else{
+                        echo 'li><img src="public/img/icons/cerrar.png" alt=""><a href="index.php?u=inicio">Acceder</a></li>';
+                    }
+                ?>        
             </ul>
             <div class="h_menu" id="menu">
                 <div class="h_title">

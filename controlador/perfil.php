@@ -10,19 +10,20 @@ class PerfilController extends BasedeDatos
             header("location: index.php?u=inicio");
             exit();
         }
-
-        if(empty($_SESSION['imagen'])){
-            $this->completeprofile();
-        }
     }
 
     public function default()
     {
+        if(empty($_SESSION['imagen'])){
+            $this->completeprofile();
+        }else{
         $datosusuario=$this->getDatosusuarios($_SESSION['id']);
         $rol=$this->rolname($_SESSION['rol']);
+        $publicaciones=$this->getperfilPublicacion($_SESSION['id']);
         require('public/layout/header.php');
         require('vistas/perfilusuario.php');
         require('public/layout/footer.php');
+        }
     }
 
     private function completeprofile()
@@ -34,6 +35,7 @@ class PerfilController extends BasedeDatos
 
     public function completedUser(){
         if(isset($_POST['perfilcompletar'])){
+            echo "entro";
             $imagen=$_FILES['uimg']['name'];
             $fdn=$_POST['fdn'];
             $genero=$_POST['genero'];
@@ -43,18 +45,22 @@ class PerfilController extends BasedeDatos
             if(!$this->validarFDN($fdn)){
                 $mensaje=$this->errores;
                 $this->mensajes("error",$mensaje);
+                exit();
             }
             if(!$this->validarImg($imagen)){
                 $mensaje=$this->errores;
                 $this->mensajes("error",$mensaje);
+                exit();
             }
             if(!$this->validarGenero($genero)){
                 $mensaje=$this->errores;
                 $this->mensajes("error",$mensaje);
+                exit();
             }
             if(!$this->validarCarrera($carrera)){
                 $mensaje=$this->errores;
                 $this->mensajes("error",$mensaje);
+                exit();
             }
             
             $img_name=$_SESSION['id'].$_SESSION['nombres']."___".$imagen;
@@ -62,9 +68,11 @@ class PerfilController extends BasedeDatos
                 if($this->completarPerfil($img_name,$fdn,$genero,$carrera)){
                 $_SESSION['imagen']=$img_name;
                 $this->mensajes("success","Has completado exitosamente tu perfil");
+                exit();
                 }
             }
         }else{
+            echo "<script>alert('no hay nada :c');</script>";
             $this->default();
         }
     }
@@ -126,7 +134,8 @@ class PerfilController extends BasedeDatos
     }
 
     private function mensajes($tipo,$mensaje){
-        header("location: index.php?u=perfil&".$tipo."=".$mensaje."");         
+        header("location: index.php?u=perfil&".$tipo."=".$mensaje."");
+        exit();    
     }
 
     private function rolname($rol){

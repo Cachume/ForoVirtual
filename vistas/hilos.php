@@ -10,8 +10,11 @@
     <div class="hilo">
         <div class="pregunta">
             <div class=botones>
-
-                <a class="boton-externo" href="index.php?u=secciones&publi=<?php echo $fila['id_tema']?>&m=crearpublicacion">Cerrar Hilo</a>
+                <?php if(isset($_SESSION['id']) && $_SESSION['rol'] < 4){
+                    echo '
+                    <a class="boton-externo" href="index.php?u=secciones&publi='.$fila['id_tema'].'&m=crearpublicacion">Cerrar Hilo</a>
+                    ';
+                }?>
                 <button style="display:none" class="boton-externo">Cerrar Hilo</button>
             </div>
             <div class="contpregunta">

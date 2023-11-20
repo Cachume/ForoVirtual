@@ -202,16 +202,15 @@ footer img {
 }
 
 .lsk li img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .lsk li a {
     text-decoration: none;
     color: white;
     margin-left: 5px;
-    margin-top: 4px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
 }
 

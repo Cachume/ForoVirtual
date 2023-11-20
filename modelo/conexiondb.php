@@ -129,12 +129,12 @@
             if($query->affected_rows >0){
                 $creartabla=$this->dbc->query("
                 CREATE TABLE IF NOT EXISTS ".$idcomentario." (
-                    `identi` INT NOT NULL AUTO_INCREMENT,
-                    `cmt_if` INT NOT NULL,
+                    `id_c` INT NOT NULL AUTO_INCREMENT,
+                    `id_user` INT NOT NULL,
                     `comentario` VARCHAR(255) NOT NULL,
                     `imagen` VARCHAR(100) NOT NULL,
                     `tiempo` VARCHAR(20) NOT NULL,
-                    PRIMARY KEY(`identi`)
+                    PRIMARY KEY(`id_c`)
                 ) ENGINE = InnoDB");
                 if($creartabla){
                     return true;
@@ -153,6 +153,21 @@
             $resultado=$query->get_result();
             if($resultado->num_rows > 0){
                 $datos=$resultado->fetch_assoc();
+                return $datos;
+            }else{
+                return false;
+            }
+        }
+
+        public function getperfilPublicacion($iduser){
+            $query=$this->db->prepare("SELECT titulo, cuerpo, imagen FROM publicaciones WHERE autor_id=? ");
+            $query->bind_param('i', $iduser);
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows > 0){
+                while ($fila = $resultado->fetch_assoc()) {
+                    $datos[]=$fila;
+                }
                 return $datos;
             }else{
                 return false;
@@ -183,15 +198,95 @@
                 return false;
             }
         }
-
         public function getuser($id){
-            $query=$this->db->prepare("SELECT nombres, apellidos, fotoperfil FROM usuarios WHERE id=?");
+            $query=$this->db->prepare("SELECT id, nombres, apellidos, fotoperfil FROM usuarios WHERE id=?");
             $query->bind_param("i",$id);
             $query->execute();
             $resutado=$query->get_result();
             if($resutado->num_rows > 0){
                 $datos=$resutado->fetch_assoc();
                 return $datos;
+            }
+        }
+
+        public function getUsers(){
+            $query=$this->db->prepare("SELECT id,nombres,apellidos,correo,rol FROM usuarios");
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows >0){
+                while ($fila = $resultado->fetch_assoc()) {
+                    $datos[]=$fila;
+                }
+                return $datos;
+            }else{
+                return false;
+            }
+        }
+
+        public function getTemas(){
+            $query=$this->db->prepare("SELECT * FROM temas");
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows >0){
+                while ($fila = $resultado->fetch_assoc()) {
+                    $datos[]=$fila;
+                }
+                return $datos;
+            }else{
+                return false;
+            }
+        }
+
+        public function saveTheme($nombretema,$nombredescripcion){
+            try {
+                $query=$this->db->prepare("INSERT INTO temas (tema, descripcion) VALUES (?,?)");
+                $query->bind_param('ss',$nombretema,$nombredescripcion);
+                $query->execute();
+                if($query->affected_rows >0){
+                    return true;
+                }
+            } catch (Exception $error) {
+                //echo $error->getMessage();
+                return false;
+            }
+        }
+        public function getSanciones(){
+            $query=$this->db->prepare("SELECT * FROM sanciones");
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows >0){
+                while ($fila = $resultado->fetch_assoc()) {
+                    $datos[]=$fila;
+                }
+                return $datos;
+            }else{
+                return false;
+            }
+        }
+        public function setSancion($id_user,$id_sancionador,$razon){
+            try {
+                $query=$this->db->prepare("INSERT INTO sanciones (id_user, id_sancionador,razon) VALUES (?,?,?)");
+                $query->bind_param('iis',$id_user,$id_sancionador,$razon);
+                $query->execute();
+                if($query->affected_rows > 0){
+                    return true;
+                }
+            } catch (Exception $error) {
+                //echo $error->getMessage();
+                return false;
+            }
+        }
+        public function removeSancion($id_user){
+            try {
+                $query=$this->db->prepare("DELETE FROM sanciones WHERE id_user=?");
+                $query->bind_param('i',$id_user);
+                $query->execute();
+                if($query->affected_rows > 0){
+                    return true;
+                }
+            } catch (Exception $error) {
+                //echo $error->getMessage();
+                return false;
             }
         }
 

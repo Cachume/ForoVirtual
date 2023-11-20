@@ -32,8 +32,8 @@
                 <h2>Comentarios</h2>
                 <?php
                     if(!$datosc){
-                        echo "<br><h1>No hay publicaciones en este tema<h1>
-                            <span>Utiliza el boton que dice Crear publicacion que se encuentra en el header</span>
+                        echo "
+                            <span>Sin comentarios</span>
                         ";
                     }else{
                         foreach ($datosc as $fila) {

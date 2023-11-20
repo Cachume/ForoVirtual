@@ -32,19 +32,24 @@
                 if(!$this->valNombresApellidos($nombres,$apellidos)){
                     $mensaje=$this->errores;
                     $this->mensajes("error",$mensaje);
+                    exit();
                 }
                 if(!$this->valCorreo($correo)){
                     $mensaje=$this->errores;
                     $this->mensajes("error",$mensaje);
+                    exit();
                 } 
                 if(!$this->valContrasena($clave, $rclave)){
                     $mensaje=$this->errores;
                     $this->mensajes("error",$mensaje);
+                    exit();
                 }
                 if($this->registrar($nombres,$apellidos,$correo,$clave)){
                     $this->mensajes("success","Te has registrado Exitosamente");
+                    exit();
                 }else{
                     $this->mensajes("error","Ha ocurrido un error en registrarte");
+                    exit();
                 }
             }else{
                 $this->default();  

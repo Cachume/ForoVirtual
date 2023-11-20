@@ -189,12 +189,13 @@ form button[type="submit"]:hover {
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
 }
 
 .post{
     background-color: white;
     width: 650px;
-    height: 300px;
+    max-height: 300px;
     border-radius: 10px;
     box-shadow: #f2f2f2 3px 5px 3px 5px;
 }

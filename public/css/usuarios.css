@@ -1,0 +1,156 @@
+@font-face{
+    font-family: Roboto;
+    src:url('./Roboto/Roboto-Black.ttf');
+    src: url('./Roboto/Roboto-Bold.ttf');
+}
+
+
+.main_usuarios{
+
+    position: relative;
+    width: 80%;
+    height: 100%;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*=======Lista de los usuarios=*/
+
+table{
+    border-collapse: collapse;
+    margin-top: 3rem;
+    font-size: 12pt;
+    width: 1000px;
+}
+
+table th{
+    text-align: left;
+    padding: 10px;
+    background: #3d7ba8;
+    color: white;
+}
+
+table tr:nth-child(odd){
+    background-color: #fff;
+}
+
+table td{
+        padding: 20px 10px;
+}
+
+/*======Estilos de edicion de usuarios=======*/
+
+.formusuario{
+    display: flex;
+    flex-direction: column;
+}
+
+.formusuario input{
+    margin: 5px;
+    width: 400px;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+}
+
+.formusuario select{
+    margin: 5px;
+    width: 400px;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+}
+
+.formusuario button{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.formusuario span{
+    font-size: 20px;
+}
+
+/*======Estilos de sancion de usuarios=======*/
+
+
+.formban{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.formban img{
+    margin-top: 20px;
+    height: 200px;
+}
+
+.formban input{
+    margin: 20px;
+    width: 18rem;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+}
+
+.formban_imgs{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.formban_imgs img:nth-child(1){
+    width: 200px;
+}
+
+.formban_imgs img:nth-child(2){
+    width: 60px;
+    height: 60px;
+}
+
+.formban_imgs img:nth-child(3){
+    width: 200px;
+    border-radius: 100px;
+}
+
+.sancionuser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4rem;
+}
+
+.sancionuser img{
+    width: 200px;
+}
+
+.sancionuser span:nth-child(3){
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.sancionuser span:nth-child(4){
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.sancionuser a{
+    font-size: 20px;
+    font-weight: bolder;
+    background: #ec4f5a;
+    color: white;
+    padding: 5px 10px;
+}
+
+.tablatemas{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}

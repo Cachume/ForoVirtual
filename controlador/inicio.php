@@ -31,10 +31,12 @@
                 if(!$this->validarlogin($correo,$contrasena)){
                     $mensaje=$this->errores;
                     $this->mensajes("error",$mensaje);
+                    exit();
                 }
                 
                 if(!$datos=$this->iniciarsesion($correo,$contrasena)){
                     $this->mensajes("error","Correo o contraseña incorrectos");
+                    exit();
                 }else{
                     $dato=$datos;
                     $_SESSION['id']=$dato['id'];
@@ -43,7 +45,12 @@
                     $_SESSION['correo']=$dato['correo'];
                     $_SESSION['rol']=$dato['rol'];
                     $_SESSION['imagen']=$dato['fotoperfil'];
-                    header("location: index.php?u=perfil&success=Has iniciado sesion correctamente");
+                    if($_SESSION['imagen'] != "" && $_SESSION['rol']==1){
+                        header("location: index.php?u=admin&success=Has iniciado sesion correctamente");
+                    }else{
+                        header("location: index.php?u=perfil&success=Has iniciado sesion correctamente");
+                    }
+                    exit();
                 }
             }else{
                 $this->default();
@@ -68,7 +75,7 @@
                 $this->errores="La contraseña debe tener minimo 8 caracteres y maximo 30";
                 return false;
             }
-           if(preg_match("/^[A-Za-z.$%#\d]+$/",$contrasena)){
+           if(!preg_match("/^[A-Za-z.$%#\d]+$/",$contrasena)){
                 $this->errores="La contraseña contiene caracteres no admitidos";
                 return false;    
             }

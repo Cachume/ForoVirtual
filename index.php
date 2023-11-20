@@ -13,11 +13,8 @@ $controllers = [
     'inicio' => 'LoginController',
     'registro' => 'RegisController',
     'perfil' => 'PerfilController',
-    'seccion' => 'SeccionController'
-
-
-
-    // Agrega más rutas aquí
+    'seccion' => 'SeccionController',
+    'admin' => 'AdminController'
 ];
 
 // Verificar si la ruta solicitada existe en el mapeo
