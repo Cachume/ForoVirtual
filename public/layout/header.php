@@ -31,26 +31,21 @@
     <header>
         <div class="h_top">
             <h2>Foro UPT "Jose Felix Ribas"</h2>
-            <a href="index.php?u=inicio">Iniciar Sesion</a>
         </div>
         <nav class="h_bottom">
             <ul>
                 <li><img src="public/img/icons/hogar.png"><a href="index.php">Inicio</a></li>
-                <li><img src="public/img/icons/cursor-dedo.png"><a href="index.php?u=secciones">Foro</a></li>
-                <li><img src="public/img/icons/globo.png"><a href="">Novedades</a></li>
-                <li><img src="public/img/icons/comentario-alt.png"><a href="">Soporte</a></li>  
+                <li><img src="public/img/icons/foro.png"><a href="index.php?u=secciones">Foro</a></li>
+                <li><img src="public/img/icons/archivo.png"><a href="index.php?u=normas">Normas</a></li>
+                <li><img src="public/img/icons/libro2.png"><a href="index.php?u=manual">Manual de Usuario</a></li>
                 <?php
                     if(isset($_SESSION['id'])){
                         echo '<li><img class="userimg" src="public/img/user_img/'.$_SESSION['imagen'].'"><a href="index.php?u=perfil">Mi Perfil</a></li>
                             <li><img src="public/img/icons/globo.png"><a href="index.php?u=perfil&m=cerrarsesion">Cerrar Sesión</a></li>
                         ';
+                    }else{
+                        echo '<li><img src="public/img/icons/log.png"><a href="index.php?u=inicio">Iniciar Sesión</a></li>';
                     }
-
-                if (isset($_GET['m'])) {
-                    if ($_GET['m'] == "hilos") {
-                        echo "<li><img src='public/img/icons/comentario-alt.png'><a href='index.php?u=secciones&m=crearpublicacion&sec=".$_GET['sec']."' id='crearpublicación'>Crear Publicación</a></li>";
-                    }
-                }
 
                 ?>
             </ul>
@@ -66,7 +61,7 @@
                     if(isset($_SESSION['id'])){
                         echo '<li><img src="public/img/user_img/'.$_SESSION['imagen'].'" alt=""><a href="index.php?u=perfil">'.$_SESSION['nombres'].'</a></li>';
                     }else{
-                        echo 'li><img src="public/img/icons/cerrar.png" alt=""><a href="index.php?u=inicio">Acceder</a></li>';
+                        echo '<li><img src="public/img/icons/cerrar.png" alt=""><a href="index.php?u=inicio">Acceder</a></li>';
                     }
                 ?>        
             </ul>
@@ -76,10 +71,9 @@
                     <img src="public/img/icons/cruz.png" alt="" onclick="verpubli()">
                 </div>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="foro.html">Foro</a></li>
-                    <li><a href="">Novedades</a></li>
-                    <li><a href="">Soporte</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="index.php?u=secciones">Foro</a></li>
+                    <li><a href="index.php?u=normas">Normas</a></li>
                 </ul>
                 <form action="" method="post">
                     <input type="text" name="search" id="" placeholder="Busqueda.....">

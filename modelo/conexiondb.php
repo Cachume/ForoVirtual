@@ -59,9 +59,9 @@
                 return false;
             }
         }
-        public function completarPerfil($imagen,$fecha,$sexo,$pnf){
-            $query=$this->db->prepare("UPDATE usuarios SET fotoperfil = ?, fdn= ?, sexo=?, pnf= ? WHERE id=".$_SESSION['id']."");
-            $query->bind_param('ssss', $imagen,$fecha,$sexo,$pnf);
+        public function completarPerfil($imagen,$fecha,$sexo,$pnf,$pin){
+            $query=$this->db->prepare("UPDATE usuarios SET fotoperfil = ?, fdn= ?, sexo=?, pnf= ?, pin =? WHERE id=".$_SESSION['id']."");
+            $query->bind_param('sssss', $imagen,$fecha,$sexo,$pnf,$pin);
             $query->execute();
             if($query->affected_rows > 0){
                 return true;
@@ -107,7 +107,7 @@
             }
         }
         public function getHilos($hilo){
-            $query=$this->db->prepare("SELECT publicaciones.id, publicaciones.titulo,publicaciones.cuerpo,publicaciones.id_tema,usuarios.fotoperfil ,usuarios.nombres, usuarios.apellidos FROM `publicaciones` JOIN usuarios ON publicaciones.autor_id=usuarios.id WHERE id_tema=?");
+            $query=$this->db->prepare("SELECT publicaciones.id, publicaciones.estado ,publicaciones.titulo,publicaciones.cuerpo,publicaciones.id_tema,usuarios.fotoperfil ,usuarios.nombres, usuarios.apellidos FROM `publicaciones` JOIN usuarios ON publicaciones.autor_id=usuarios.id WHERE id_tema=?");
             $query->bind_param('i', $hilo);
             $query->execute();
             $resultado=$query->get_result();
@@ -147,7 +147,7 @@
         }
         
         public function getPublicacion($id){
-            $query=$this->db->prepare("SELECT publicaciones.titulo, publicaciones.cuerpo, publicaciones.imagen, publicaciones.id_tema, publicaciones.id, publicaciones.tabla_comentarios ,usuarios.nombres, usuarios.apellidos,usuarios.fotoperfil FROM `publicaciones` JOIN usuarios ON publicaciones.autor_id=usuarios.id WHERE publicaciones.id=? ");
+            $query=$this->db->prepare("SELECT publicaciones.titulo, publicaciones.cuerpo, publicaciones.imagen, publicaciones.id_tema, publicaciones.id, publicaciones.tabla_comentarios,publicaciones.estado ,usuarios.nombres, usuarios.apellidos,usuarios.fotoperfil FROM `publicaciones` JOIN usuarios ON publicaciones.autor_id=usuarios.id WHERE publicaciones.id=? ");
             $query->bind_param('i', $id);
             $query->execute();
             $resultado=$query->get_result();
@@ -286,6 +286,42 @@
                 }
             } catch (Exception $error) {
                 //echo $error->getMessage();
+                return false;
+            }
+        }
+
+        public function closeHilo($publi){
+            $query=$this->db->prepare("UPDATE publicaciones SET estado ='Cerrado' WHERE id=?");
+            $query->bind_param('i',$publi);
+            $query->execute();
+                if($query->affected_rows > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+        }
+
+        public function checkUser($id){
+            $query=$this->db->prepare("SELECT * FROM sanciones WHERE id_user=?");
+            $query->bind_param('i',$id);
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function getbanUser($id){
+            $query=$this->db->prepare("SELECT  sanciones.razon,sanciones.fecha ,usuarios.nombres, usuarios.apellidos FROM `sanciones` JOIN usuarios ON sanciones.id_sancionador=usuarios.id WHERE sanciones.id_user=? ");
+            $query->bind_param('i', $id);
+            $query->execute();
+            $resultado=$query->get_result();
+            if($resultado->num_rows > 0){
+                $datos=$resultado->fetch_assoc();
+                return $datos;
+            }else{
                 return false;
             }
         }

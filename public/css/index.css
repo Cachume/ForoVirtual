@@ -306,4 +306,12 @@ footer img {
     .welcome_item{
         width: 567px;
     }
+    .cintillo img:nth-child(1) {
+        height: 50px;
+        width: 300px;
+      }
+      .cintillo img:nth-child(2) {
+        height: 30px;
+        width: 300px;
+      }
     }

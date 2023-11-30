@@ -69,7 +69,9 @@ class SeccionesController extends BasedeDatos
 
             if (empty($errores)) {
                 // Aquí, si no hay errores, continúa con el proceso
-                $publicacionGuardada = $this->guardarPublicacionEnDb($titulo, $cuerpo, $imagen, $publi);
+                $img_name=$_SESSION['id']."_publicacion"."___".$imagen;
+                move_uploaded_file($_FILES['imagenp']['tmp_name'],"public/img/publi_img/".$img_name);
+                $publicacionGuardada = $this->guardarPublicacionEnDb($titulo, $cuerpo, $img_name, $publi);
 
                 if ($publicacionGuardada) {
                     // La publicación se guardó 
@@ -77,7 +79,8 @@ class SeccionesController extends BasedeDatos
                 } else {
                     // Ocurrió un error al guardar la publicación
                     header("location:index.php?u=secciones&m=crearpublicacion&error=Ocurrió un error al crear la publicación");
-                }
+                 }
+                
             } else {
                 $this->crearpublicacion();
             }
@@ -110,6 +113,23 @@ class SeccionesController extends BasedeDatos
            
         } else {
             $this->mensajes("error","La respuesta no fue enviada",$_GET['p']);
+        }
+    }
+
+    public function cerrarhilo(){
+        if(isset($_GET['sec'])){
+            $publi=$_GET['sec'];
+            if(is_numeric($publi)){
+                if($this->closeHilo($publi)){
+                    $this->mensajes("success","Se ha cerrado el hilo",$publi);
+                }else{
+                    $this->mensajes("error","No se ha podido cerrar el hilo",$publi);
+                }
+            }else{
+                $this->default();
+            }
+        }else{
+            $this->default();
         }
     }
 

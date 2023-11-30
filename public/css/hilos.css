@@ -8,7 +8,70 @@ body {
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
   margin-bottom: 3rem;
+}
+
+.hilos-titulos{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  margin-bottom: 3rem;
+}
+
+.hilos-titulos a{
+  background-color: #305a7b;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.publicaciones{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.publicacion_item{
+  width: 600px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.publicacion_info{
+  text-align: center;
+}
+
+.publicacion_info a{
+  font-size: 23px;
+  text-decoration: none;
+ 
+}
+
+.publicacion_info p{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.publicacion_autor{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.publicacion_autor img{
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+
+.publicacion_autor span{
+  font-weight: bolder;
 }
 
 /* Estilo compartido para tarjetas de comentarios y noticias */
@@ -212,6 +275,14 @@ form button[type="submit"] {
   .tarjeta {
     max-width: 90%; /* Reduce el ancho máximo para que se ajuste mejor en pantallas más pequeñas */
     margin-left: 5%; /* Centra el elemento horizontalmente */
+  }
+
+  .publicacion_item{
+    width: 400px;
+  }
+
+  .hilos-titulos{
+    width: 400px;
   }
   
   .uno_noticias {

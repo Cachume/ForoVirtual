@@ -85,7 +85,7 @@
 .error1 {
     background-color: red;
     font-size: 20px;
-    width: 560px;
+    width: 400px;
     color: white;
     border-radius: 5px;
     margin: 5px auto;
@@ -95,7 +95,7 @@
 .success {
     background-color: green;
     font-size: 20px;
-    width: 560px;
+    width: 400px;
     border-radius: 5px;
     margin: 5px auto;
     color: white;

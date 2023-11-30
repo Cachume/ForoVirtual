@@ -45,6 +45,11 @@
                     $_SESSION['correo']=$dato['correo'];
                     $_SESSION['rol']=$dato['rol'];
                     $_SESSION['imagen']=$dato['fotoperfil'];
+                    if($this->checkUser($dato['id'])){
+                        $_SESSION['baneado']=true;
+                        header("location: index.php?u=baneado");
+                        exit();
+                    }
                     if($_SESSION['imagen'] != "" && $_SESSION['rol']==1){
                         header("location: index.php?u=admin&success=Has iniciado sesion correctamente");
                     }else{

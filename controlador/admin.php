@@ -10,10 +10,13 @@
                     header("location: index.php?u=perfil");
                     exit();
                 }
-                if($_SESSION['rol']!=1){
+                if($_SESSION['rol']==4){
                     header("location: index.php?u=perfil");
                     exit();
                 }
+            }else{
+                header("location: index.php?u=inicio");
+                exit(); 
             }
             
         }

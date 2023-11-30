@@ -41,7 +41,7 @@
                             <p><?php echo $fila['cuerpo']?></p>
                             <br>
                             <?php if($fila['imagen']!=""){
-                                echo '<img src="public/img/'.$fila['imagen'].'" width="280px" height="150px" alt="" srcset="">';
+                                echo '<img src="public/img/publi_img/'.$fila['imagen'].'" width="280px" height="150px" alt="" srcset="">';
                             }
                             ?>
                         </div>

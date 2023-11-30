@@ -1,0 +1,37 @@
+@font-face{
+    font-family: Roboto;
+    src:url('./Roboto/Roboto-Black.ttf');
+    src: url('./Roboto/Roboto-Bold.ttf');
+}
+
+body{
+    font-family: Roboto;
+    background: #f6f6f6;
+}
+
+.main_ban{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.ban_imagen{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ban_imagen img{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+.ban_datos{
+    text-align: center;
+    margin-top: 10px;
+}

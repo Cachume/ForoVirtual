@@ -64,8 +64,9 @@ class PerfilController extends BasedeDatos
             }
             
             $img_name=$_SESSION['id'].$_SESSION['nombres']."___".$imagen;
+            $pine=password_hash($pin,PASSWORD_BCRYPT);
             if(move_uploaded_file($_FILES['uimg']['tmp_name'],"public/img/user_img/".$img_name)){
-                if($this->completarPerfil($img_name,$fdn,$genero,$carrera)){
+                if($this->completarPerfil($img_name,$fdn,$genero,$carrera,$pine)){
                 $_SESSION['imagen']=$img_name;
                 $this->mensajes("success","Has completado exitosamente tu perfil");
                 exit();
@@ -87,7 +88,7 @@ class PerfilController extends BasedeDatos
             $this->errores="El mes ingresado no es valido";
             return false;
         }
-        if($fecha[0] < 1960 || $fecha[0] > date("Y")){
+        if($fecha[0] < 1960 || $fecha[0] > date("Y")-18){
             $this->errores="El año ingresado no es valido";
             return false;
         }

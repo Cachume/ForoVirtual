@@ -3,6 +3,12 @@
             <div class="user_publicacion">
                 <div class="publicacionbotones">
                     <a href="index.php?u=secciones&m=hilos&sec=<?php echo $datos['id_tema']?>">🡸 Regresar</a>
+                    <?php
+                    if(!$datos['estado']=="Cerrado"){
+                        ?>
+                        <a href="index.php?u=secciones&m=cerrarhilo&sec=<?php echo $datos['id']?>">Cerrar hilo</a>
+                    <?php }
+                    ?>
                 </div>
                 <h1><?php echo $datos['titulo'];?></h1>
                 <p> <?php echo $datos['cuerpo'];?></p>
@@ -12,7 +18,8 @@
                     <span>Publicación creada por: <?php echo $datos['nombres']." ".$datos['apellidos'];?></span>
                 </div>
                 <div class="respuesta">
-                    <button id="abrirPopup">Responder</button>
+                    <?php if(isset($_SESSION['id']) && $datos['estado']==""){echo '<button id="abrirPopup">Responder</button>';}?>
+
                     <div id="popup" class="overlay">
                         <div class="popup">
                             <h2>Responder</h2>

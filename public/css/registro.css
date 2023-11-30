@@ -12,11 +12,10 @@
 }
 
 
-.imagen {
+.imagen{
     width: 350px;
 
 }
-
 .registro {
     max-width: 400px;
     background: #f6f6f6;
@@ -30,13 +29,13 @@
 }
 
 
-.registro h4 {
+.registro h4{
     font-size: 40px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.controles {
+.controles{
     width: 100%;
     background: #f6f6f6;
     padding: 10px;
@@ -44,18 +43,17 @@
     margin-bottom: 16px;
     border: 1px solid #276e90;
     font-family: 'arial';
-
+ 
 }
 
-.registro p {
+.registro p{
     height: 40px;
     text-align: center;
-    width: auto;
     font-size: 16px;
     line-height: 40px;
 }
 
-.registro a {
+.registro a{
     color: #083358;
     text-decoration: none;
 }
@@ -63,13 +61,13 @@
 .registro a:hover {
     color: red;
     text-decoration: underline;
-}
+    }
 
-.registro .boton {
+.registro .boton{
     width: 100%;
     height: 50px;
     border: 1px solid #B5B2B2;
-    background: #0f4471;
+    background: #0f4471 ;
     font-size: 19px;
     color: white;
     cursor: pointer;
@@ -77,10 +75,41 @@
     margin: 16px 0;
 }
 
+/* Estilos para el tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    font-size: 15px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    transform: translateX(-20%); 
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 @media only screen and (max-width: 900px) {
-    .imagen {
-        display: none;
+    .imagen{
+    display: none;
 
     }
-
+    
 }
+   

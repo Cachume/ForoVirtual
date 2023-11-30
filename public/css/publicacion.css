@@ -103,7 +103,9 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  margin-left: 10px;
 }
+
 .publicacion{
   display: flex;
   flex-direction: column;
@@ -194,11 +196,11 @@ textarea {
 @media only screen and (max-width:900px) {
 
   .user_publicacion{
-    width: 500px;
+    width: 400px;
   }
 
   .user_comentario{
-    width: 500px;
+    width: 400px;
   }
 }
 
